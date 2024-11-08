@@ -31,7 +31,7 @@
 
 4. Execute as migrações do Prisma para configurar o banco de dados:
    ```bash
-   export DATABASE_URL="file:./dev.db" && npx prisma migrate dev
+   npx prisma migrate dev
    ```
 
 ## Para ligar o servidor de desenvolvimento

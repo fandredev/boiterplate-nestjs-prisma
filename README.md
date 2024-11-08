@@ -1,7 +1,7 @@
 ## Tecnologias usadas
 
   <a href="https://go-skill-icons.vercel.app/">
-    <img src="https://go-skill-icons.vercel.app/api/icons?i=typescript,nodejs,git,yarn,jest" alt="typescript,nodejs,git,yarn,jest" />
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=typescript,nodejs,git,yarn,jest,githubactions" alt="typescript,nodejs,git,yarn,jest,githubactions" />
   </a>
 
 <br>
@@ -63,4 +63,3 @@ $ npm run test:cov
 ```
 
 ![Cobertura de testes](coverage.png)
-# boiterplate-nestjs-prisma

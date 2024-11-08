@@ -6,7 +6,6 @@ import { WaterModule } from './water/water.module';
 import configuration from './config/configuration';
 
 import * as Joi from 'joi';
-
 /*
   Aqui eu estou configurando as variaveis de ambiente do projeto e fazendo validação nelas.
   O Joi é uma ferramenta de validação de dados, que é muito utilizada no Node.js.

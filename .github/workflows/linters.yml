@@ -8,6 +8,9 @@ on:
     types: [opened, synchronize, edited]
     branches:
       - main
+env:
+  DATABASE_URL: 'file:./dev.db'
+  APP_PORT: '3000'
 
 jobs:
   test:
@@ -26,9 +29,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Add .env file
+        run: echo "DATABASE_URL=file:./dev.db\nAPP_PORT=3000" > .env
+        
       - name: Install dependencies
         run: yarn install
 
       - name: Run Linters
-        run: export DATABASE_URL="file:./dev.db" && yarn run lint
+        run:  yarn run lint
 

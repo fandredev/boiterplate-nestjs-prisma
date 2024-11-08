@@ -8,7 +8,11 @@ on:
     types: [opened, synchronize, edited]
     branches:
       - main
+env:
+  DATABASE_URL: 'file:./dev.db'
+  APP_PORT: '3000'
 
+  
 jobs:
   test:
     runs-on: ${{ matrix.os }}
@@ -26,6 +30,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Add .env file
+        run: echo "DATABASE_URL=file:./dev.db\nAPP_PORT=3000" > .env
+          
       - name: Install dependencies
         run: yarn install
 
@@ -33,4 +40,4 @@ jobs:
         run: yarn run test
 
       - name: Run coverage
-        run: export DATABASE_URL="file:./dev.db" && yarn run test:cov
+        run: yarn run test:cov

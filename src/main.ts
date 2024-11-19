@@ -7,6 +7,7 @@ import { ValidationPipe } from '@nestjs/common';
  * Ela cria uma instância do NestFactory e passa o AppModule como parâmetro.
  * Além disso, ela utiliza o ValidationPipe para validar as requisições.
  * Por fim, ela inicia a aplicação na porta definida na variável de ambiente APP_PORT.
+ * Habilita o CORS para aceitar requisições de qualquer origem (Front-end).
  */
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -17,6 +18,10 @@ async function bootstrap() {
       whitelist: true,
     }),
   );
+
+  app.enableCors({
+    origin: '*', // not enable this in production
+  });
   await app.listen(process.env.APP_PORT);
 }
 bootstrap();

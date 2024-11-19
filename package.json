@@ -70,7 +70,12 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "collectCoverageFrom": [
-      "**/*.(t|j)s"
+      "**/*.(t|j)s",
+      "!consumo_agua/**/*"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/consumo_agua/"
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",

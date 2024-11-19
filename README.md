@@ -1,3 +1,5 @@
+# Back-end
+
 ## Tecnologias usadas
 
   <a href="https://go-skill-icons.vercel.app/">
@@ -30,38 +32,83 @@
    ```
 
 4. Execute as migrações do Prisma para configurar o banco de dados:
+
    ```bash
    npx prisma migrate dev
+   ```
+
+5. O servidor já está pronto para ser executado. Caso der o seguinte erro:
+
+   PrismaClientInitializationError: error: Error validating datasource `db`: the URL must start with the protocol `file:`.
+   --> schema.prisma:13
+   |
+   12 | provider = "sqlite"
+   13 | url = env("DATABASE_URL")
+
+   ## Execute esse Comando:
+
+   ```
+      export DATABASE_URL="file:./dev.db" && npm run start:dev
    ```
 
 ## Para ligar o servidor de desenvolvimento
 
 ```bash
 # Servidor padrão
-$ npm run start
+npm run start
 
 # Escutando alterações dos arquivos
-$ npm run start:dev
+npm run start:dev
 ```
 
 ## Para rodar os testes
 
 ```bash
 # Servidor padrão
-$ npm run test
+npm run test
 
 # Escutando alterações dos arquivos
-$ npm run test:watch
+npm run test:watch
 ```
 
 ## Cobertura de testes
 
 ```bash
 # Servidor padrão
-$ npm run test:cov
+npm run test:cov
 
 ```
 
 ![Cobertura de testes](coverage.png)
 
-# AtividadeMackenzie
+---
+
+# Front-end
+
+## Tecnologias usadas
+
+  <a href="https://go-skill-icons.vercel.app/">
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=html,tailwind,css,javascript" alt="html,tailwind,css,javascript" />
+  </a>
+
+<br>
+<br>
+<br>
+
+# Setup do Projeto
+
+## Configuração do Ambiente
+
+1. Abra a pasta `src/consumo_agua`:
+2. Use o Live Server e abra os arquivos HTML para fazer as requisições correta:
+
+   - `public/form-create-user.html`: Formulário de criação de um novo usuário.
+   - `public/form-create-consuming-water.html`: Formulário de criação de um consumo de água
+
+3. Inicie o servidor de desenvolvimento do back-end
+
+## Para ligar o servidor de desenvolvimento
+
+```bash
+npm run start:dev
+```

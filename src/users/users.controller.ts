@@ -20,6 +20,17 @@ export class UsersController {
   }
 
   /**
+   * Rota para buscar todos os usuários
+   *
+   * @returns Promise<User[]>
+   */
+
+  @Get('all')
+  getUsers() {
+    return this.usersService.getUsers();
+  }
+
+  /**
    * Rota para buscar um usuário pelo id
    *
    * @param userId Id do usuário já criado

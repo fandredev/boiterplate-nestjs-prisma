@@ -13,10 +13,31 @@ export class UsersService {
    * @param data Prisma.UserCreateInput - Dados do usuário a ser criado
    * @returns Prisma__UserClient - Usuário criado
    */
-  createUser(data: Prisma.UserCreateInput) {
+  async createUser(data: Prisma.UserCreateInput) {
+    const email = data.email;
+
+    const searchEmail = await this.prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+
+    if (searchEmail) {
+      throw new BadRequestException('Email já cadastrado');
+    }
+
     return this.prisma.user.create({
       data,
     });
+  }
+
+  /**
+   * Método para buscar todos os usuários no banco de dados
+   *
+   * @returns Promise<User[]>
+   */
+  async getUsers() {
+    return await this.prisma.user.findMany();
   }
 
   /**

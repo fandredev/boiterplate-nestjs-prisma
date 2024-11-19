@@ -18,6 +18,7 @@ describe(`${UsersController.name}`, () => {
           provide: UsersService,
           useValue: {
             createUser: jest.fn(),
+            getUsers: jest.fn(),
             getUserById: jest.fn(),
           },
         },
@@ -50,6 +51,31 @@ describe(`${UsersController.name}`, () => {
 
     expect(createUserResult).toEqual(userCreated);
     expect(usersService.createUser).toHaveBeenCalledWith(user);
+  });
+
+  it(`should call #${UsersService.prototype.getUsers.name} when route is called`, async () => {
+    const users: User[] = [
+      {
+        id: 1,
+        email: faker.internet.email(),
+        name: faker.person.firstName(),
+        createdAt: faker.date.recent(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 2,
+        email: faker.internet.email(),
+        name: faker.person.firstName(),
+        createdAt: faker.date.recent(),
+        updatedAt: new Date(),
+      },
+    ];
+
+    jest.spyOn(usersService, 'getUsers').mockResolvedValue(users);
+    const getUsersResult = await controller.getUsers();
+
+    expect(getUsersResult).toEqual(users);
+    expect(usersService.getUsers).toHaveBeenCalled();
   });
 
   it(`should call #${UsersService.prototype.getUserById.name} when route is called`, async () => {

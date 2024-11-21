@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 /**
  * Exibe uma mensagem especifica de erro em um elemento do formulário.
  * @param {string} elementId ID do elemento onde a mensagem será exibida.

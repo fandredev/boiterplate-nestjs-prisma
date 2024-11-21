@@ -125,7 +125,7 @@ describe(`${WaterService.name}`, () => {
       expect(service['prisma'].waterConsumption.findMany).toHaveBeenCalledWith({
         where: {
           userId,
-          createdAt: {
+          readingDate: {
             gte: startDate,
             lte: endDate,
           },

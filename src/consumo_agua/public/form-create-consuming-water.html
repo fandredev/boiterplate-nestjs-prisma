@@ -1,62 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Consumo de Água</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-  <div class="bg-white p-8 rounded shadow-lg w-full max-w-md">
-    <h1 class="text-2xl font-bold text-center mb-6">Cadastro de Consumo de Água</h1>
-    <form id="water-consumption-form" class="space-y-4">
-      <div>
-        <label for="user" class="block font-semibold mb-2">ID do Usuário:</label>
-        <input
-          type="number"
-          id="user"
-          name="user"
-          class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Digite o ID do usuário"
-          required
-        />
-        <span id="user-error" class="text-red-500 text-sm"></span>
-      </div>
-      <div>
-        <label for="consumption" class="block font-semibold mb-2">Consumo de Água (m³):</label>
-        <input
-          type="number"
-          id="consumption"
-          name="consumption"
-          class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Digite a quantidade consumida"
-          required
-        />
-        <span id="consumption-error" class="text-red-500 text-sm"></span>
-      </div>
-      <div>
-        <label for="readingDate" class="block font-semibold mb-2">Data do Consumo:</label>
-        <input
-          type="date"
-          id="readingDate"
-          name="readingDate"
-          class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-        <span id="readingDateError" class="text-red-500 text-sm"></span>
-      </div>
-      <button
-        type="submit"
-        class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
-      >
-        Registrar Consumo
-      </button>
-    </form>
-  </div>
-  <script src="constants/api-url.js"></script>
-  <script src="constants/messages.js"></script>
-  <script src="scripts/forms/water-consumption/consuming-api.js"></script>
-  <script src="scripts/forms/water-consumption/errors.js"></script>
-  <script src="scripts/forms/water-consumption/water-consumption.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Consumo de Água</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded shadow-lg w-full max-w-md">
+      <h1 class="text-2xl font-bold text-center mb-6">
+        Cadastro de Consumo de Água
+      </h1>
+      <form id="water-consumption-form" class="space-y-4">
+        <div>
+          <label for="user" class="block font-semibold mb-2"
+            >ID do Usuário:</label
+          >
+          <input
+            type="number"
+            id="user"
+            name="user"
+            class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Digite o ID do usuário"
+            required
+          />
+          <span id="user-error" class="text-red-500 text-sm"></span>
+        </div>
+        <div>
+          <label for="consumption" class="block font-semibold mb-2"
+            >Consumo de Água (m³):</label
+          >
+          <input
+            type="number"
+            id="consumption"
+            name="consumption"
+            class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Digite a quantidade consumida"
+            required
+          />
+          <span id="consumption-error" class="text-red-500 text-sm"></span>
+        </div>
+        <div>
+          <label for="readingDate" class="block font-semibold mb-2"
+            >Data do Consumo:</label
+          >
+          <input
+            type="date"
+            id="readingDate"
+            name="readingDate"
+            class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+          <span id="readingDateError" class="text-red-500 text-sm"></span>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
+        >
+          Registrar Consumo
+        </button>
+      </form>
+    </div>
+    <script src="constants/api-url.js"></script>
+    <script src="constants/messages.js"></script>
+    <script src="scripts/forms/water-consumption/consuming-api.js"></script>
+    <script src="scripts/forms/water-consumption/errors.js"></script>
+    <script src="scripts/forms/water-consumption/water-consumption.js"></script>
+  </body>
 </html>

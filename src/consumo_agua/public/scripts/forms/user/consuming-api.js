@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 /**
  * Função para criar um usuário na API.
  * @param {Object} payload - Dados do formulário.

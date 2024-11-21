@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 /**
  * Exibe uma mensagem especifica de erro em um elemento do formulário.
  * @param {string} elementId ID do elemento onde a mensagem será exibida.
@@ -19,30 +21,28 @@ function showAllErrorsForm(user, consumption, readingDate) {
   let isValid = true;
 
   if (isNaN(user) || user <= 0) {
-    showError("user-error", ERROR_FIELD_USER);
+    showError('user-error', ERROR_FIELD_USER);
     isValid = false;
   }
 
   if (isNaN(consumption) || consumption <= 0) {
-    showError("consumption-error", ERROR_FIELD_CONSUMPTION);
+    showError('consumption-error', ERROR_FIELD_CONSUMPTION);
     isValid = false;
   }
 
   if (!readingDate) {
-    showError("readingDateError", ERROR_FIELD_DATE);
+    showError('readingDateError', ERROR_FIELD_DATE);
     isValid = false;
   }
 
   return isValid;
-
 }
 
 /**
  * Limpa todas as mensagens de erro exibidas no formulário.
  */
 function clearErrors() {
+  const elementError = document.querySelectorAll('.text-red-500');
 
-  const elementError = document.querySelectorAll(".text-red-500");
-
-  elementError.forEach((element) => (element.textContent = ""));
+  elementError.forEach((element) => (element.textContent = ''));
 }

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 /**
  * Cria um novo registro de consumo de água.
  * @param {Object} payload Dados do formulário.

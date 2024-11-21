@@ -100,10 +100,12 @@ npm run test:cov
 ## Configuração do Ambiente
 
 1. Abra a pasta `src/consumo_agua`:
-2. Use o Live Server e abra os arquivos HTML para fazer as requisições correta:
+2. Use o Live Server ou o navegador e abra os arquivos HTML para fazer as requisições corretas:
 
-   - `public/form-create-user.html`: Formulário de criação de um novo usuário.
+   - `public/form-create-user.html`: Formulário de criação de um novo usuário. (TUDO COMEÇA POR AQUI!)
    - `public/form-create-consuming-water.html`: Formulário de criação de um consumo de água
+   - `public/form-consumer-water-table`: Formulário de visualização do consumo de água
+   - `public/consumer-water`: Formulário de validação dos dois últimos meses para saber se o consumo de agua aumentou ou não.
 
 3. Inicie o servidor de desenvolvimento do back-end
 

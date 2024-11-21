@@ -64,7 +64,7 @@ export class WaterService {
     return this.prisma.waterConsumption.findMany({
       where: {
         userId,
-        createdAt: {
+        readingDate: {
           gte: startDate,
           lte: endDate,
         },
